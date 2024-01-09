@@ -8,6 +8,4 @@ Cyclistic’s finance analysts have concluded that annual members are much more 
 
 **Business Task: How do annual members and casual riders use Cyclistic bikes differently?**
 
-I'm using Cyclistic's historical trip data and it can be downloaded from [here](https://divvy-tripdata.s3.amazonaws.com/index.html).The data has been made available by Motivate International Inc. under this [license](https://divvybikes.com/data-license-agreement).
-
-I chose the data from Jan 2022 to April 2022 for this project.The original data is considered first-party data even though Cyclistic is a fictional company for this case study. The data is from a real bike sharing company in Chicago.
+I'm using Cyclistic's historical trip data and it can be downloaded from [here](https://divvy-tripdata.s3.amazonaws.com/index.html).The data has been made available by Motivate International Inc. under this [license](https://divvybikes.com/data-license-agreement).I chose the data from Jan 2022 to April 2022 for this project.
