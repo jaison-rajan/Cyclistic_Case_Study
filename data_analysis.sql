@@ -150,3 +150,9 @@ ORDER BY
   avg_ride_length DESC
 
 --Annual subscribers have the longest ride length in July. They have the shortest rides in  March and January.
+
+
+**Recommendation:**
+
+Introduce a new membership tier, priced at $70 annually or $6.25 monthly.This tier, designed to cater to the summer riding preferences of casual riders, incorporates all annual 
+membership benefits, thereby enhancing customer satisfaction and potentially increasing revenue during the peak summer season.
