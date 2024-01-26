@@ -6,7 +6,7 @@
 SELECT
   LENGTH(ride_id) AS ride_id_length,
 FROM 
-  quick-discovery-402518.cyclistic_project.2022Q1Data
+  quick-discovery-402518.cyclistic_project.2022_2023Data 
 GROUP BY LENGTH(ride_id); -- same ride_id
 
 --#2 rideable_type
@@ -15,7 +15,7 @@ GROUP BY LENGTH(ride_id); -- same ride_id
 SELECT 
   DISTINCT rideable_type AS types_of_rides
 FROM
-  quick-discovery-402518.cyclistic_project.2022Q1Data
+  quick-discovery-402518.cyclistic_project.2022_2023Data 
  GROUP BY types_of_rides;
 
  --There are only three distinct values for Ride Type: classic bikes, electric bikes, and docked bikes. There are no typos or unqualifying values in this column that require cleaning.
@@ -28,7 +28,7 @@ SELECT
 started_at,
 ended_at
 FROM 
-  quick-discovery-402518.cyclistic_project.2022Q1Data
+  quick-discovery-402518.cyclistic_project.2022_2023Data 
 WHERE started_at IS NULL OR ended_at IS NULL;
 
 --There are no null values in either column. No data cleaning is necessary.
@@ -39,7 +39,7 @@ SELECT
   DISTINCT(start_station_name) AS unique_start_station,
   COUNT(*) AS number_of_occurrences
 FROM 
-  quick-discovery-402518.cyclistic_project.2022Q1Data
+  quick-discovery-402518.cyclistic_project.2022_2023Data 
 GROUP BY 
   start_station_name
 ORDER BY 
@@ -49,7 +49,7 @@ SELECT
   DISTINCT(end_station_name) AS unique_end_station,
   COUNT(*) AS number_of_occurrences
 FROM 
-  quick-discovery-402518.cyclistic_project.2022Q1Data
+  quick-discovery-402518.cyclistic_project.2022_2023Data 
 GROUP BY 
   end_station_name
 ORDER BY 
@@ -59,7 +59,7 @@ SELECT
   DISTINCT(start_station_id) AS unique_start_station_id,
   COUNT(*) AS number_of_occurrences
 FROM 
-  quick-discovery-402518.cyclistic_project.2022Q1Data
+  quick-discovery-402518.cyclistic_project.2022_2023Data 
 GROUP BY
    start_station_id
 ORDER BY 
@@ -69,7 +69,7 @@ SELECT
   DISTINCT(end_station_id) AS unique_end_station_id,
   count(*) AS number_of_occurrences
 FROM 
-  quick-discovery-402518.cyclistic_project.2022Q1Data
+  quick-discovery-402518.cyclistic_project.2022_2023Data 
 GROUP BY
   end_station_id
 ORDER BY 
@@ -80,7 +80,7 @@ SELECT
   COUNT(DISTINCT(end_station_name)) AS unique_endname,
   COUNT(DISTINCT(start_station_id)) AS unique_startid,
   COUNT(DISTINCT(end_station_id)) AS unique_endid
-FROM quick-discovery-402518.cyclistic_project.2022Q1Data;
+FROM quick-discovery-402518.cyclistic_project.2022_2023Data ;
 
 --Notes: Spacing and formatting is consistent for station names. No typos/extra spaces need to be corrected. There are a significant number of null values, but these will not be removed as it is possible for a docked bike to start and end its ride away from a station.
 
@@ -92,7 +92,7 @@ SELECT
   end_lat,
   end_lng
  FROM
-  quick-discovery-402518.cyclistic_project.2022Q1Data
+  quick-discovery-402518.cyclistic_project.2022_2023Data 
 LIMIT 1000;
 
  --Check for null values in latitude or longitude fields:
@@ -100,7 +100,7 @@ LIMIT 1000;
 SELECT
   COUNT(*)
 FROM 
-  quick-discovery-402518.cyclistic_project.2022Q1Data
+  quick-discovery-402518.cyclistic_project.2022_2023Data 
 WHERE
   start_lat IS NULL
   OR end_lat IS NULL
@@ -117,7 +117,7 @@ WHERE
   start_lng,
   end_lng
 FROM 
-  quick-discovery-402518.cyclistic_project.2022Q1Data
+  quick-discovery-402518.cyclistic_project.2022_2023Data 
 WHERE 
   start_lat < 90 AND start_lat > -90 AND start_lat IS NOT NULL
   AND end_lat < 90 AND end_lat > -90 AND end_lat IS NOT NULL
@@ -130,7 +130,7 @@ WHERE
 SELECT
   DISTINCT(member_casual)  AS unique_member_types
 FROM 
-  quick-discovery-402518.cyclistic_project.2022Q1Data
+  quick-discovery-402518.cyclistic_project.2022_2023Data 
 GROUP BY
   member_casual;
 
@@ -140,7 +140,7 @@ GROUP BY
 SELECT
   timestamp_diff (ended_at, started_at, SECOND) AS ride_length
 FROM 
-  quick-discovery-402518.cyclistic_project.2022Q1Data;
+  quick-discovery-402518.cyclistic_project.2022_2023Data ;
 --Create new column for the day of the week on which the ride took place:
 SELECT
   CASE
@@ -153,7 +153,7 @@ SELECT
     ELSE'Saturday'
     END AS day_of_week
 FROM 
-  quick-discovery-402518.cyclistic_project.2022Q1Data;
+  quick-discovery-402518.cyclistic_project.2022_2023Data ;
 
 --Create a new column for the month in which the ride took place:
 SELECT
@@ -172,13 +172,13 @@ SELECT
     ELSE'December'
     END AS month
 FROM
-  quick-discovery-402518.cyclistic_project.2022Q1Data;
+  quick-discovery-402518.cyclistic_project.2022_2023Data ;
 
 --Create a new column for the year in which the ride took place:
 SELECT
   EXTRACT (YEAR FROM started_at) AS year
 FROM 
-  quick-discovery-402518.cyclistic_project.2022Q1Data;
+  quick-discovery-402518.cyclistic_project.2022_2023Data ;
 
 --Create new table with the cleaned data, called Data_For_Analysis:
 
@@ -224,7 +224,7 @@ SELECT
     END AS month,
     EXTRACT (YEAR FROM started_at) AS year
 FROM 
-  quick-discovery-402518.cyclistic_project.2022Q1Data
+  quick-discovery-402518.cyclistic_project.2022_2023Data 
 WHERE 
   LENGTH(ride_id) = 16 AND ride_id IS NOT NULL
   AND start_lat < 90 AND start_lat > -90 AND start_lat IS NOT NULL
