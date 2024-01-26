@@ -6,7 +6,8 @@ Until now, Cyclistic’s marketing strategy relied on building general awareness
 
 Cyclistic’s finance analysts have concluded that annual members are much more profitable than casual riders.
 
-**Business Task 1: How do annual members and casual riders use Cyclistic bikes differently?**
+**Business Task 1: How do annual members and casual riders use cyclistic bikes differently?**
+
 **Business Task 2: Recommendation to maximize annaual memberships**
 
 I'm using Cyclistic's historical trip data and it can be downloaded from [here](https://divvy-tripdata.s3.amazonaws.com/index.html). The data has been made available by Motivate International Inc. under this [license](https://divvybikes.com/data-license-agreement). I chose the data from July 2022 to June 2023 for this case study.
